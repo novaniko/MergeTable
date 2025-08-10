@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<title>Tablolar ve Kayıt İşlemleri</title>
+<style>
+  table { border-collapse: collapse; width: 90%; margin-bottom: 30px; }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: center; }
+  th { background-color: #eee; }
+  button { margin: 0 5px; padding: 5px 10px; cursor: pointer; }
+  form { margin-bottom: 40px; }
+  label { margin-right: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Standart Duruş Bilgileri</h2>
+<table id="standardTable">
+  <thead>
+    <tr>
+      <th>Başlangıç</th>
+      <th>Bitiş</th>
+      <th>Duruş Nedeni</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Üretim Operasyon Bildirimleri</h2>
+<table id="mainTable">
+  <thead>
+    <tr>
+      <th>Kayıt No</th>
+      <th>Başlangıç</th>
+      <th>Bitiş</th>
+      <th>Toplam Süre (Saat)</th>
+      <th>Statü</th>
+      <th>Duruş Nedeni</th>
+      <th>İşlem</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h3>Yeni Kayıt Ekle</h3>
+<form id="addForm">
+  <label>Başlangıç: <input type="time" id="startTime" required /></label>
+  <label>Bitiş: <input type="time" id="endTime" required /></label>
+  <label>Statü: 
+    <select id="status" required>
+      <option value="ÜRETİM">ÜRETİM</option>
+      <option value="DURUŞ">DURUŞ</option>
+    </select>
+  </label>
+  <label>Duruş Nedeni: <input type="text" id="comment" /></label>
+  <button type="submit">Ekle</button>
+</form>
+<button id="mergeBtn">Tabloları Birleştir</button>
+
+<h2>Birleşik Tablo (Üretim Operasyon Bildirimleri)</h2>
+<table id="mergedTable">
+  <thead>
+    <tr>
+      <th>Sıra No</th>
+      <th>Başlangıç</th>
+      <th>Bitiş</th>
+      <th>Toplam Süre (Saat)</th>
+      <th>Statü</th>
+      <th>Duruş Nedeni</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+const baseUrl = 'http://localhost:5207';
+
+// Format fonksiyonları
+function formatTimeOnly(t) {
+  return t.slice(0,5);
+}
+
+function formatDateOnly(d) {
+  const parts = d.split('-');
+  return `${parts[2]}/${parts[1]}/${parts[0]}`;
+}
+
+function formatDateTime(dateStr, timeStr) {
+  return `${formatDateOnly(dateStr)} ${formatTimeOnly(timeStr)}`;
+}
+
+function formatDuration(ts) {
+  let [h,m] = ts.split(':');
+  return `${h.padStart(2,'0')}:${m.padStart(2,'0')}`;
+}
+
+async function loadStandardTable() {
+  const res = await fetch(baseUrl + '/standardTable');
+  const data = await res.json();
+  const tbody = document.querySelector('#standardTable tbody');
+  tbody.innerHTML = '';
+  data.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${formatTimeOnly(r.startTime)}</td>
+      <td>${formatTimeOnly(r.endTime)}</td>
+      <td>${r.comment}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+async function loadMainTable() {
+  const res = await fetch(baseUrl + '/table');
+  const data = await res.json();
+  const tbody = document.querySelector('#mainTable tbody');
+  tbody.innerHTML = '';
+  data.forEach((r,i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i+1}</td>
+      <td>${formatDateTime(r.date, r.startTime)}</td>
+      <td>${formatDateTime(r.date, r.endTime)}</td>
+      <td>${formatDuration(r.durationTime)}</td>
+      <td>${r.status}</td>
+      <td>${r.comment}</td>
+      <td><button data-id="${r.id}">Sil</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  tbody.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-id');
+      if(confirm('Bu kaydı silmek istediğinize emin misiniz?')) {
+        const res = await fetch(baseUrl + '/table/' + id, { method: 'DELETE' });
+        if(res.ok) {
+          alert('Kayıt silindi.');
+          loadMainTable();
+          clearMergedTable();
+        } else {
+          alert('Silme işlemi başarısız oldu.');
+        }
+      }
+    });
+  });
+}
+
+document.getElementById('addForm').addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const startTime = document.getElementById('startTime').value + ":00";
+  const endTime = document.getElementById('endTime').value + ":00";
+  const status = document.getElementById('status').value;
+  const comment = document.getElementById('comment').value;
+
+  const newRecord = { startTime, endTime, status, comment };
+
+  const res = await fetch(baseUrl + '/table', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newRecord)
+  });
+
+  if(res.ok) {
+    alert('Kayıt başarıyla eklendi.');
+    loadMainTable();
+    clearMergedTable();
+    e.target.reset();
+  } else {
+    const error = await res.text();
+    alert('Hata: ' + error);
+  }
+});
+
+function clearMergedTable() {
+  document.querySelector('#mergedTable tbody').innerHTML = '';
+}
+
+document.getElementById('mergeBtn').addEventListener('click', async () => {
+  const res = await fetch(baseUrl + '/mergedTable');
+  if(!res.ok) {
+    alert('Birleşik tablo yüklenirken hata oluştu.');
+    return;
+  }
+  const data = await res.json();
+  const tbody = document.querySelector('#mergedTable tbody');
+  tbody.innerHTML = '';
+  data.forEach((r,i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${i+1}</td>
+      <td>${formatDateTime(r.date, r.startTime)}</td>
+      <td>${formatDateTime(r.date, r.endTime)}</td>
+      <td>${formatDuration(r.durationTime)}</td>
+      <td>${r.status}</td>
+      <td>${r.comment}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+});
+
+window.onload = () => {
+  loadStandardTable();
+  loadMainTable();
+  clearMergedTable();
+};
+</script>
+
+</body>
+</html>

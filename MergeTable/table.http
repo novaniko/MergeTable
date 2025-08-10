@@ -1,0 +1,36 @@
+GET http://localhost:5207/table
+
+###
+GET http://localhost:5207/standardTable
+
+###
+GET http://localhost:5207/table/1
+
+###
+POST http://localhost:5207/table
+Content-Type: application/json
+
+{
+    "startTime": "14:45:00",
+    "endTime": "11:30:00",
+    "status": "URETIM",
+    "comment": "TEST"
+}
+
+###
+PUT http://localhost:5207/table/3
+Content-Type: application/json
+
+{
+    "startTime": "07:30:00",
+    "endTime": "08:30:00",
+    "status": "aaaaaaaaaaaaaaaa",
+    "comment": "-"
+}
+
+###
+DELETE http://localhost:5207/table/1
+
+###
+
+GET http://localhost:5207/mergedTable

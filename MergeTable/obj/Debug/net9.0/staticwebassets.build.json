@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "Hash": "WY3W7NbZkyTBkyzexCiP6kbyiBXEFK95ZZPPRkzDEGw=",
+  "Source": "MergeTable",
+  "BasePath": "_content/MergeTable",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MergeTable\\wwwroot",
+      "Source": "MergeTable",
+      "ContentRoot": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\",
+      "BasePath": "_content/MergeTable",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\dcfgdn8rp4-r5w4kigtr4.gz",
+      "SourceId": "MergeTable",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/MergeTable",
+      "RelativePath": "index#[.{fingerprint=r5w4kigtr4}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "99j7nbo0xi",
+      "Integrity": "w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\index.html",
+      "SourceId": "MergeTable",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\",
+      "BasePath": "_content/MergeTable",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r5w4kigtr4",
+      "Integrity": "z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\dcfgdn8rp4-r5w4kigtr4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000524658972"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1905"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6054"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\dcfgdn8rp4-r5w4kigtr4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1905"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ="
+        }
+      ]
+    },
+    {
+      "Route": "index.r5w4kigtr4.html",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\dcfgdn8rp4-r5w4kigtr4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000524658972"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1905"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r5w4kigtr4"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0="
+        }
+      ]
+    },
+    {
+      "Route": "index.r5w4kigtr4.html",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6054"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r5w4kigtr4"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9ecKnDGTLEmOSAHEvSd/cP1aQA9JX4oxJnnaRJYRr0="
+        }
+      ]
+    },
+    {
+      "Route": "index.r5w4kigtr4.html.gz",
+      "AssetFile": "C:\\Users\\ertugrul\\OneDrive\\Masaüstü\\sds\\MergeTable\\MergeTable\\obj\\Debug\\net9.0\\compressed\\dcfgdn8rp4-r5w4kigtr4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1905"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 10 Aug 2025 21:09:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r5w4kigtr4"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w59VOwYW7+qsz5UHPRQWJJMadZ8eLLtJs/yPb0wmQtQ="
+        }
+      ]
+    }
+  ]
+}
